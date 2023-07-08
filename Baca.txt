@@ -1,0 +1,6 @@
+1. bikin-aplikasi-node-js-Refactor
+2. react js project film dengan react + axios
+3. bikin rest api
+4. bikin axios dari rest api
+
+
