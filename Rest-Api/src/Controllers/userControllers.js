@@ -6,11 +6,32 @@ const contact = require('../models/Contact')
  const loadUser = async(req,res) => {
   try{
     const Users = await contact.find()
-    res.send(Users)
+    res.json(Users)
   }catch{
-    res.send('error')
+    res.status(404)
   }
 }
 
+//getDatabyid
+const getUserById = async(req,res) => {
+  try{
+    const Users = await contact.findOne({_id: req.params.id})
+    res.json(Users)
+  }catch{
+    res.status(401)
+  }
+}
 
-module.exports = {loadUser}
+//add data
+
+// const addUser = async (req,res) => {
+//   const {Nama,noHp,Email} = req.body
+//   try{
+    
+//     console.log(req.body)
+//   }catch{
+//     res.status(404)
+//   }
+// }
+
+module.exports = {loadUser,getUserById}
