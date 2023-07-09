@@ -6,7 +6,7 @@ const contact = require('../models/Contact')
  const loadUser = async(req,res) => {
   try{
     const Users = await contact.find()
-    console.log(Users)
+    res.send(Users)
   }catch{
     res.send('error')
   }
